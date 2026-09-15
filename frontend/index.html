@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Code Explorer — Lab 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-screen" class="login-screen">
+        <form id="login-form" class="login-card">
+            <h1 class="login-title">Online Code Explorer</h1>
+            <p class="login-hint">
+                Solve <code>backend/puzzle.json</code> for your password, then
+                Register or Sign in. See <code>readme.md</code>.
+            </p>
+            <label class="login-label" for="login-username">Username (student id)</label>
+            <input
+                id="login-username"
+                class="login-input"
+                type="text"
+                autocomplete="username"
+                spellcheck="false"
+                required
+            >
+            <label class="login-label" for="login-password">Password</label>
+            <input
+                id="login-password"
+                class="login-input"
+                type="password"
+                autocomplete="current-password"
+                required
+            >
+            <p id="login-error" class="login-error" hidden></p>
+            <div class="login-actions">
+                <button id="login-btn" class="toolbar-btn login-btn" type="submit">Sign in</button>
+                <button id="register-btn" class="toolbar-btn login-btn login-btn-secondary" type="button">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="app-shell" class="app-shell" hidden>
+        <header class="toolbar">
+            <h1 class="toolbar-title">Online Code Explorer — Lab 2</h1>
+            <div class="toolbar-actions">
+                <span id="status-message" class="status-message" role="status"></span>
+                <button id="refresh-btn" class="toolbar-btn" type="button">Refresh</button>
+            </div>
+        </header>
+
+        <div class="workspace">
+            <aside class="sidebar">
+                <h2 class="sidebar-heading">Files</h2>
+                <ul id="file-list" class="file-list"></ul>
+            </aside>
+
+            <section class="editor-pane">
+                <div id="editor-label" class="editor-label">No file selected</div>
+                <div id="editor-placeholder" class="editor-fallback">
+                    Select a file from the list. File contents are not available in this lab.
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
